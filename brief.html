@@ -9,24 +9,15 @@
 <body>
     <div class="container">
         <nav><a href="index.html" class="logo">GS STUDIO</a></nav>
-        
-        <section style="padding: 60px 0;">
-            <div style="max-width: 700px; margin: 0 auto; background: var(--panel); padding: 40px; border-radius: var(--radius);">
-                <h2 style="text-align: center; margin-bottom: 30px;">الزتونة في دقيقة</h2>
-                <form id="briefForm">
-                    <input type="text" name="name" placeholder="اسمك الكريم" required>
-                    <input type="text" name="project" placeholder="نوع المشروع (لوجو، هوية..)" required>
-                    <select name="service" required style="margin-bottom: 15px;">
-                        <option value="">اختر الخدمة</option>
-                        <option>هوية بصرية</option>
-                        <option>إنفوجرافيك</option>
-                        <option>سوشيال ميديا</option>
-                    </select>
-                    <textarea name="notes" rows="5" placeholder="احكي لنا فكرتك باختصار.." required></textarea>
-                    <button type="submit" class="btn-cta" style="width: 100%;">إرسال للواتساب</button>
-                </form>
-            </div>
-        </section>
+        <div class="form-box">
+            <h2 style="text-align: center; margin-bottom: 30px;">الزتونة في دقيقة</h2>
+            <form id="briefForm">
+                <input type="text" name="name" placeholder="اسمك الكريم" required>
+                <input type="text" name="project" placeholder="نوع المشروع؟" required>
+                <textarea name="notes" rows="5" placeholder="احكي لنا فكرتك باختصار.." required></textarea>
+                <button type="submit" class="btn-cta" style="width:100%">إرسال للواتساب</button>
+            </form>
+        </div>
     </div>
     <script src="js/main.js"></script>
 </body>
