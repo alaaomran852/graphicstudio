@@ -4,52 +4,36 @@
     <meta charset="UTF-8">
     <title>GS STUDIO | هوية تبيع لك</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav class="container" style="display: flex; justify-content: space-between; padding: 20px;">
-        <div style="font-weight: 900; color: var(--blue-tech); font-size: 1.5rem;">GS STUDIO</div>
-        <a href="#brief" style="color: var(--blue-tech); font-weight: bold; text-decoration: none;">ابدأ مشروعك</a>
-    </nav>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">GS STUDIO</a>
+            <div style="display:flex; gap:20px; align-items: center;">
+                <a href="services.html" style="color:var(--text); text-decoration:none">الخدمات</a>
+                <a href="portfolio.html" style="color:var(--text); text-decoration:none">الأعمال</a>
+                <a href="brief.html" class="btn-cta" style="padding:8px 20px">ابدأ بريف</a>
+            </div>
+        </nav>
 
-    <header class="container" style="text-align: center; padding: 100px 0;">
-        <h1 style="font-size: 3rem; font-weight: 900;">هوية بصرية <span style="color: var(--blue-tech);">تبيع لك.</span></h1>
-        <p style="color: var(--muted); margin-bottom: 40px;">مش بنرسم لوجو، إحنا بنبني "شخصية" لبراندك تخلي العميل يثق فيك.</p>
-        <a href="#brief" style="background: var(--blue-tech); color: white; padding: 15px 40px; border-radius: 10px; text-decoration: none; font-weight: bold;">ابعت البريف.. والباقي علينا</a>
-    </header>
+        <header style="text-align: center; padding: 80px 0;">
+            <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900;">هوية بصرية <span style="color: var(--blue-tech);">تبيع لك.</span></h1>
+            <p style="color: var(--muted); margin-bottom: 40px; font-size: 1.2rem;">مش بنرسم لوجو، إحنا بنبني "شخصية" لبراندك تخلي العميل يثق فيك.</p>
+            <a href="brief.html" class="btn-cta">ابعت البريف.. والباقي علينا</a>
+        </header>
 
-    <section class="container">
-        <h2 style="text-align: center; margin-bottom: 20px;">شوف لمساتنا..</h2>
-        <div class="slider-container">
+        <section class="slider-container">
+            <h2 style="text-align: center; margin-bottom: 30px;">شوف لمساتنا..</h2>
             <div class="slider-track">
-                <div class="work-item">مشروع هوية تقنية</div>
+                <div class="work-item">هوية شركة تقنية</div>
                 <div class="work-item">إنفوجرافيك طبي</div>
                 <div class="work-item">براند مطعم فاخر</div>
                 <div class="work-item">سوشيال ميديا كافيه</div>
-                <div class="work-item">مشروع هوية تقنية</div>
-                <div class="work-item">إنفوجرافيك طبي</div>
+                <div class="work-item">هوية شركة تقنية</div>
             </div>
-        </div>
-    </section>
-
-    <section id="brief" class="form-section">
-        <div class="container" style="max-width: 700px;">
-            <h2 style="text-align: center; margin-bottom: 40px;">الزتونة في دقيقة</h2>
-            <form id="briefForm">
-                <input type="text" name="name" placeholder="اسمك الكريم" required>
-                <input type="text" name="project" placeholder="نوع المشروع (لوجو، هوية..)" required>
-                <select name="budget">
-                    <option value="" disabled selected>الميزانية التقريبية؟</option>
-                    <option value="اقتصادية">اقتصادية</option>
-                    <option value="متوسطة">متوسطة</option>
-                    <option value="احترافية">احترافية</option>
-                </select>
-                <textarea name="notes" rows="5" placeholder="احكي لنا فكرتك باختصار.." required></textarea>
-                <button type="submit" class="btn-submit">إرسال للواتساب</button>
-            </form>
-        </div>
-    </section>
-
-    <script src="main.js"></script>
+        </section>
+    </div>
+    <script src="js/main.js"></script>
 </body>
 </html>
