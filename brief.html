@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>أرسل البريف | GS STUDIO</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -12,13 +12,19 @@
         <div class="form-box">
             <h2 style="text-align: center; margin-bottom: 30px;">الزتونة في دقيقة</h2>
             <form id="briefForm">
-                <input type="text" name="name" placeholder="اسمك الكريم" required>
-                <input type="text" name="project" placeholder="نوع المشروع؟" required>
-                <textarea name="notes" rows="5" placeholder="احكي لنا فكرتك باختصار.." required></textarea>
+                <input type="text" id="name" placeholder="اسمك الكريم" required>
+                <input type="text" id="project" placeholder="نوع المشروع؟" required>
+                <textarea id="notes" rows="5" placeholder="احكي لنا فكرتك باختصار.." required></textarea>
                 <button type="submit" class="btn-cta" style="width:100%">إرسال للواتساب</button>
             </form>
         </div>
     </div>
-    <script src="js/main.js"></script>
+    <script>
+        document.getElementById("briefForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const text = `مرحباً Alaa..%0Aأنا: ${document.getElementById('name').value}%0Aمحتاج: ${document.getElementById('project').value}%0Aالتفاصيل: ${document.getElementById('notes').value}`;
+            window.open(`https://wa.me/201064255553?text=${text}`, '_blank');
+        });
+    </script>
 </body>
 </html>
