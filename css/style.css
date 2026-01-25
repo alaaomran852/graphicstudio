@@ -1,0 +1,71 @@
+/* الألوان التقنية الموحدة */
+:root {
+  --blue-tech: #0062ff;
+  --bg: #050a18;
+  --panel: #0f172a;
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --line: rgba(255,255,255,.08);
+  --radius: 16px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Cairo', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  direction: rtl;
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* الـ Slider الاحترافي */
+.slider-container {
+  overflow: hidden;
+  padding: 40px 0;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  gap: 20px;
+  animation: scroll 20s linear infinite;
+}
+
+.slider-track:hover { animation-play-state: paused; }
+
+.work-item {
+  min-width: 300px;
+  height: 200px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--blue-tech);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.work-item:hover { border-color: var(--blue-tech); transform: translateY(-5px); }
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-320px * 4)); }
+}
+
+/* الفورم */
+.form-section { padding: 80px 0; background: var(--panel); border-radius: 40px 40px 0 0; }
+input, textarea, select {
+  width: 100%; padding: 15px; margin-bottom: 15px;
+  background: var(--bg); border: 1px solid var(--line);
+  border-radius: 10px; color: white; font-family: inherit;
+}
+.btn-submit {
+  background: var(--blue-tech); color: white; border: none;
+  padding: 18px; width: 100%; border-radius: 10px;
+  font-weight: 900; cursor: pointer; font-size: 1.1rem;
+}

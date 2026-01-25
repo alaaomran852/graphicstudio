@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>خدماتنا | GS STUDIO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 60px 0; }
+        .s-card { background: var(--panel); border: 1px solid var(--line); padding: 30px; border-radius: var(--radius); transition: 0.3s; }
+        .s-card:hover { border-color: var(--blue-tech); transform: translateY(-5px); }
+        .s-card h3 { color: var(--blue-tech); margin-bottom: 15px; font-size: 1.5rem; }
+        .s-card ul { list-style: none; color: var(--muted); }
+        .s-card ul li { margin-bottom: 8px; position: relative; padding-right: 20px; }
+        .s-card ul li::before { content: "←"; position: absolute; right: 0; color: var(--blue-tech); }
+    </style>
+</head>
+<body>
+    <nav class="container" style="display: flex; justify-content: space-between; padding: 20px;">
+        <a href="index.html" class="logo" style="text-decoration:none">GS STUDIO</a>
+        <a href="index.html#brief" style="color: var(--blue-tech); font-weight: bold; text-decoration: none;">ابدأ مشروعك</a>
+    </nav>
+
+    <header class="container" style="text-align: center; padding: 60px 0;">
+        <h1 style="font-size: 2.5rem;">خدماتنا <span>من الآخر</span></h1>
+        <p style="color: var(--muted);">بنقدم لك الحلول اللي براندك محتاجها عشان يظهر ويبيع.</p>
+    </header>
+
+    <main class="container">
+        <div class="services-grid">
+            <div class="s-card">
+                <h3>هوية بصرية كاملة</h3>
+                <ul>
+                    <li>شعار (Logo) احترافي.</li>
+                    <li>باليتة ألوان وخطوط خاصة.</li>
+                    <li>تطبيقات الهوية (كروت، أظرف).</li>
+                </ul>
+            </div>
+            <div class="s-card">
+                <h3>إنفوجرافيك احترافي</h3>
+                <ul>
+                    <li>تبسيط بيانات معقدة.</li>
+                    <li>تصميمات تعليمية أو تسويقية.</li>
+                    <li>تنسيق عالي الوضوح.</li>
+                </ul>
+            </div>
+            <div class="s-card">
+                <h3>تصميمات سوشيال ميديا</h3>
+                <ul>
+                    <li>بوستات تخلي العميل يوقف سكرول.</li>
+                    <li>تنسيق بروفايلات وكفرات.</li>
+                    <li>إعلانات موجهة للبيع.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 40px; color: var(--muted);">
+        <a href="index.html#brief" class="btn-submit" style="display:inline-block; width:auto; padding: 15px 40px; text-decoration:none">اطلب خدمتك دلوقتي</a>
+    </footer>
+</body>
+</html>
