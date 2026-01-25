@@ -19,29 +19,29 @@ body {
 
 .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-/* Navigation */
+/* القائمة العلوي */
 nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--line); }
 .logo { font-weight: 900; font-size: 1.5rem; color: var(--blue-tech); text-decoration: none; }
+.nav-links a { color: var(--text); text-decoration: none; margin-right: 20px; font-weight: bold; font-size: 0.9rem; }
 
-/* Portfolio Slider (Hero Animation) */
-.slider-container { overflow: hidden; padding: 40px 0; position: relative; }
+/* أزرار */
+.btn-cta { 
+  background: var(--blue-tech); color: white; padding: 12px 30px; border-radius: 10px; 
+  text-decoration: none; font-weight: bold; display: inline-block; border: none; cursor: pointer;
+}
+
+/* سلايدر الأعمال */
+.slider-container { overflow: hidden; padding: 40px 0; }
 .slider-track { display: flex; gap: 20px; animation: scroll 25s linear infinite; }
-.slider-track:hover { animation-play-state: paused; }
 .work-item {
   min-width: 300px; height: 200px; background: var(--panel); border: 1px solid var(--line);
   border-radius: var(--radius); display: flex; align-items: center; justify-content: center;
-  font-weight: bold; color: var(--blue-tech); transition: 0.3s; cursor: pointer;
+  font-weight: bold; color: var(--blue-tech);
 }
 @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-320px * 4)); } }
 
-/* Cards & Forms */
-.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 40px 0; }
-.s-card { background: var(--panel); border: 1px solid var(--line); padding: 25px; border-radius: var(--radius); transition: 0.3s; }
-.s-card:hover { border-color: var(--blue-tech); }
-.btn-cta { 
-  background: var(--blue-tech); color: white; padding: 15px 35px; border-radius: 10px; 
-  text-decoration: none; font-weight: bold; display: inline-block; border: none; cursor: pointer;
-}
+/* الفورم */
+.form-box { background: var(--panel); padding: 40px; border-radius: var(--radius); max-width: 700px; margin: 40px auto; }
 input, textarea, select {
   width: 100%; padding: 15px; margin-bottom: 15px; background: var(--bg);
   border: 1px solid var(--line); border-radius: 10px; color: white; font-family: inherit;
