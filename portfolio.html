@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GraphicStudio — الأعمال</title>
+  <meta name="description" content="Portfolio: فلترة + مودال تفاصيل المشاريع." />
+  <meta name="theme-color" content="#0b0c10" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0b0c10; --panel:#11131a; --panel2:#0f1117;
+      --text:#e8eaf2; --muted:#a7adbd; --accent:#1f4fd8;
+      --line:rgba(255,255,255,.09); --shadow:0 16px 40px rgba(0,0,0,.45);
+      --r:18px; --r2:22px; --max:1120px;
+    }
+    body.light{
+      --bg:#f7f8fc; --panel:#fff; --panel2:#f1f3f9;
+      --text:#121629; --muted:#5c647a; --line:rgba(0,0,0,.10);
+      --shadow:0 18px 46px rgba(18,22,41,.12);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:"Cairo",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:
+        radial-gradient(1200px 900px at 85% -10%, rgba(31,79,216,.30), transparent 55%),
+        radial-gradient(900px 700px at 10% 10%, rgba(154,205,191,.16), transparent 60%),
+        var(--bg);
+      color:var(--text); line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
+
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:rgba(10,11,16,.70);backdrop-filter:blur(10px)}
+    body.light .nav{background:rgba(255,255,255,.75)}
+    .navInner{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px;min-width:180px}
+    .brandMark{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(31,79,216,1),rgba(31,79,216,.55));box-shadow:var(--shadow);font-weight:900;color:#fff}
+    .brandText{display:flex;flex-direction:column;gap:2px;line-height:1.1}
+    .brandText strong{font-size:15px}
+    .brandText span{font-size:12px;color:var(--muted)}
+    .navLinks{display:flex;align-items:center;justify-content:center;gap:8px;flex:1}
+    .navLinks a{padding:10px 12px;border-radius:12px;color:var(--muted);border:1px solid transparent}
+    .navLinks a:hover{color:var(--text);background:rgba(255,255,255,.05);border-color:var(--line)}
+    body.light .navLinks a:hover{background:rgba(0,0,0,.05)}
+    .navLinks a.active{color:var(--text);background:rgba(255,255,255,.05);border-color:var(--line)}
+    body.light .navLinks a.active{background:rgba(0,0,0,.05)}
+    .navActions{display:flex;align-items:center;gap:10px;min-width:220px;justify-content:flex-end}
+    .iconBtn{border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--text);padding:10px 12px;border-radius:12px;cursor:pointer}
+    body.light .iconBtn{background:rgba(0,0,0,.04)}
+    .cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:10px 14px;border-radius:14px;border:1px solid rgba(31,79,216,.30);background:rgba(31,79,216,.14);white-space:nowrap}
+    .cta:hover{background:rgba(31,79,216,.20)}
+
+    .pageHero{padding:34px 0 10px}
+    .heroCard{
+      border:1px solid var(--line);
+      border-radius: calc(var(--r2) + 6px);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.02));
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+    body.light .heroCard{background: linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.01))}
+    .heroCard h1{margin:0 0 6px;font-size:28px}
+    .heroCard p{margin:0;color:var(--muted)}
+
+    .section{padding:18px 0 30px}
+
+    .filters{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+    .chip{
+      padding:10px 12px;border-radius:999px;border:1px solid var(--line);
+      background:rgba(255,255,255,.03);color:var(--muted);cursor:pointer
+    }
+    .chip.active{
+      color:var(--text); background:rgba(31,79,216,.16);
+      border-color:rgba(31,79,216,.25)
+    }
+
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .project{
+      border:1px solid var(--line); border-radius:var(--r2);
+      background:rgba(255,255,255,.03); padding:16px;
+      cursor:pointer; transition:transform .14s ease, border-color .14s ease;
+    }
+    .project:hover{transform:translateY(-2px); border-color:rgba(31,79,216,.28)}
+    .kicker{color:var(--muted); font-size:13px}
+    .project h3{margin:8px 0 6px}
+    .meta{color:var(--muted); font-size:13px}
+
+    /* Modal */
+    .modal{position:fixed; inset:0; display:none; z-index:99}
+    .modal.show{display:block}
+    .overlay{position:absolute; inset:0; background:rgba(0,0,0,.55)}
+    .modalCard{
+      position:relative;
+      width:min(920px, calc(100% - 22px));
+      margin: 70px auto;
+      border-radius: calc(var(--r2) + 10px);
+      border:1px solid var(--line);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+    .close{
+      position:absolute; top:10px; left:10px;
+      width:42px; height:42px; border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.06);
+      color:var(--text); cursor:pointer;
+    }
+    .modalBody h3{margin:0 0 6px}
+    .modalBody p{margin:0; color:var(--muted)}
+    .tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:12px}
+    .tag{padding:8px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--muted);font-size:12px}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px; padding:12px 16px; border-radius:14px;
+      border:1px solid var(--line); background:rgba(255,255,255,.05);
+      cursor:pointer; margin-top:14px;
+    }
+    .btnPrimary{background:linear-gradient(135deg,rgba(31,79,216,1),rgba(31,79,216,.72));border-color:rgba(31,79,216,.35);color:#fff}
+
+    footer{padding:22px 0;border-top:1px solid var(--line);color:var(--muted)}
+    .footerInner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .footerLinks{display:flex;gap:12px}
+    .footerLinks a{color:var(--muted)}
+    .footerLinks a:hover{color:var(--text)}
+
+    .waFloat{
+      position:fixed; right:16px; bottom:16px; z-index:60;
+      padding:12px 14px; border-radius:999px;
+      background:rgba(31,79,216,.95); color:#fff;
+      border:1px solid rgba(31,79,216,.40); box-shadow:var(--shadow);
+      display:inline-flex; align-items:center; gap:10px;
+    }
+
+    @media (max-width: 980px){.navLinks{display:none}.navActions{min-width:auto}.grid{grid-template-columns:1fr}}
+    a:focus,button:focus{outline:3px solid rgba(31,79,216,.45);outline-offset:2px;border-radius:14px}
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <div class="container">
+      <div class="navInner">
+        <a class="brand" href="index.html">
+          <span class="brandMark">GS</span>
+          <span class="brandText">
+            <strong>GraphicStudio</strong>
+            <span>Portfolio</span>
+          </span>
+        </a>
+
+        <nav class="navLinks" aria-label="التنقل الرئيسي">
+          <a href="index.html">الرئيسية</a>
+          <a href="services.html">الخدمات</a>
+          <a class="active" href="portfolio.html">الأعمال</a>
+          <a class="cta" href="brief.html">أرسل البريف</a>
+        </nav>
+
+        <div class="navActions">
+          <button class="iconBtn" id="themeToggle" type="button">🌙</button>
+          <button class="iconBtn" id="langToggle" type="button">AR</button>
+          <a class="cta" id="waTop" href="#" target="_blank" rel="noopener">واتساب</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="pageHero">
+      <div class="heroCard">
+        <h1>الأعمال</h1>
+        <p>فلترة سريعة + تفاصيل مشروع داخل مودال. استبدل بيانات المشاريع من الـ JS.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="filters" id="filters"></div>
+      <div class="grid" id="grid"></div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="overlay" id="overlay"></div>
+    <div class="modalCard" role="dialog" aria-modal="true" aria-label="تفاصيل المشروع">
+      <button class="close" id="close" type="button">×</button>
+      <div class="modalBody" id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footerInner">
+        <div>© <span id="year"></span> Alaa Omran — GraphicStudio</div>
+        <div class="footerLinks">
+          <a href="services.html">الخدمات</a>
+          <a href="index.html">الرئيسية</a>
+          <a href="brief.html">البريف</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="waFloat" id="waFloat" href="#" target="_blank" rel="noopener">WhatsApp</a>
+
+  <script>
+    (function(){
+      const PHONE = "201064255553";
+      const yearEl = document.getElementById("year");
+      if(yearEl) yearEl.textContent = new Date().getFullYear();
+
+      function waLink(text){ return `https://wa.me/${PHONE}?text=${encodeURIComponent(text)}`; }
+      const waTop = document.getElementById("waTop");
+      const waFloat = document.getElementById("waFloat");
+      const msg = "مرحبًا، أريد الاطلاع على خدمات التصميم.";
+      if(waTop) waTop.href = waLink(msg);
+      if(waFloat) waFloat.href = waLink(msg);
+
+      // Theme
+      const themeBtn = document.getElementById("themeToggle");
+      const savedTheme = localStorage.getItem("gs_theme");
+      if(savedTheme === "light") document.body.classList.add("light");
+      if(themeBtn){
+        themeBtn.addEventListener("click", ()=> {
+          const isLight = document.body.classList.toggle("light");
+          localStorage.setItem("gs_theme", isLight ? "light" : "dark");
+        });
+      }
+
+      // Lang (direction only)
+      const langBtn = document.getElementById("langToggle");
+      const savedLang = localStorage.getItem("gs_lang") || "ar";
+      document.documentElement.lang = savedLang;
+      document.documentElement.dir  = savedLang === "ar" ? "rtl" : "ltr";
+      if(langBtn) langBtn.textContent = savedLang.toUpperCase();
+      if(langBtn){
+        langBtn.addEventListener("click", ()=> {
+          const cur = localStorage.getItem("gs_lang") || "ar";
+          const next = cur === "ar" ? "en" : "ar";
+          localStorage.setItem("gs_lang", next);
+          document.documentElement.lang = next;
+          document.documentElement.dir  = next === "ar" ? "rtl" : "ltr";
+          langBtn.textContent = next.toUpperCase();
+        });
+      }
+
+      // Projects (عدل هنا فقط)
+      const PROJECTS = [
+        { id:"p1", cat:"هوية", title:"هوية — شركة تقنية", sub:"Logo + System + Mockups", deliver:["Logo","Colors","Typography","Mockups"], tools:["AI","PS"], time:"3 أيام" },
+        { id:"p2", cat:"هوية", title:"هوية — متجر", sub:"Rebrand + Visual Language", deliver:["Logo","Guidelines","Assets"], tools:["AI"], time:"4 أيام" },
+        { id:"p3", cat:"إنفوجرافيك", title:"إنفوجرافيك — طبي", sub:"A4 + IG", deliver:["A4 PDF","IG Post","Carousel"], tools:["AI"], time:"48 ساعة" },
+        { id:"p4", cat:"إنفوجرافيك", title:"إنفوجرافيك — تعليمي", sub:"Hierarchy + Icons", deliver:["A4","Slide"], tools:["AI"], time:"24 ساعة" },
+        { id:"p5", cat:"سوشيال", title:"سوشيال — حملة", sub:"12 Post + 6 Story", deliver:["Posts","Stories","Covers"], tools:["PS"], time:"48 ساعة" },
+        { id:"p6", cat:"سوشيال", title:"سوشيال — براند", sub:"Templates System", deliver:["Templates","Grid"], tools:["PS"], time:"3 أيام" },
+        { id:"p7", cat:"باكجنج", title:"Packaging — ليبل", sub:"Label + Mockups", deliver:["Label","Mockups"], tools:["AI","PS"], time:"72 ساعة" },
+        { id:"p8", cat:"مواد", title:"بروفايل شركة", sub:"Company Profile PDF", deliver:["PDF","Print Ready"], tools:["AI","ID"], time:"5 أيام" },
+        { id:"p9", cat:"مواد", title:"بروشور", sub:"Tri-fold / A4", deliver:["PDF","Source"], tools:["ID"], time:"3 أيام" }
+      ];
+
+      const filtersEl = document.getElementById("filters");
+      const gridEl = document.getElementById("grid");
+      const modal = document.getElementById("modal");
+      const overlay = document.getElementById("overlay");
+      const closeBtn = document.getElementById("close");
+      const modalBody = document.getElementById("modalBody");
+
+      const cats = ["الكل", ...Array.from(new Set(PROJECTS.map(p=>p.cat)))];
+      let active = "الكل";
+
+      function chip(label){
+        const b = document.createElement("button");
+        b.type="button";
+        b.className = "chip" + (label === active ? " active" : "");
+        b.textContent = label;
+        b.addEventListener("click", ()=>{ active = label; render(); });
+        return b;
+      }
+
+      function card(p){
+        const d = document.createElement("div");
+        d.className = "project";
+        d.innerHTML = `
+          <div class="kicker">${p.cat}</div>
+          <h3>${p.title}</h3>
+          <div class="meta">${p.sub}</div>
+        `;
+        d.addEventListener("click", ()=> openModal(p));
+        return d;
+      }
+
+      function render(){
+        filtersEl.innerHTML = "";
+        cats.forEach(c => filtersEl.appendChild(chip(c)));
+
+        gridEl.innerHTML = "";
+        const list = (active === "الكل") ? PROJECTS : PROJECTS.filter(p=>p.cat === active);
+        list.forEach(p => gridEl.appendChild(card(p)));
+      }
+
+      function openModal(p){
+        modalBody.innerHTML = `
+          <h3>${p.title}</h3>
+          <p>${p.sub}</p>
+          <div class="tags">
+            ${p.deliver.map(x=>`<span class="tag">${x}</span>`).join("")}
+            ${p.tools.map(x=>`<span class="tag">${x}</span>`).join("")}
+            <span class="tag">المدة: ${p.time}</span>
+          </div>
+          <a class="btn btnPrimary" target="_blank" rel="noopener"
+             href="${waLink(`مرحبًا، أريد مشروع مشابه: ${p.title}`)}">اطلب مثل هذا</a>
+        `;
+        modal.classList.add("show");
+        modal.setAttribute("aria-hidden","false");
+      }
+
+      function closeModal(){
+        modal.classList.remove("show");
+        modal.setAttribute("aria-hidden","true");
+      }
+
+      overlay.addEventListener("click", closeModal);
+      closeBtn.addEventListener("click", closeModal);
+      document.addEventListener("keydown", (e)=>{ if(e.key==="Escape") closeModal(); });
+
+      render();
+    })();
+  </script>
+</body>
+</html>
