@@ -1,37 +1,91 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>GS STUDIO | الرئيسية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GraphicStudio — الرئيسية</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body> <header class="nav">
     <div class="container">
-        <nav>
-            <a href="index.html" class="logo">GS STUDIO</a>
-            <div class="nav-links">
-                <a href="services.html">الخدمات</a>
-                <a href="portfolio.html">الأعمال</a>
-                <a href="brief.html" class="btn-cta">ابدأ بريف</a>
-            </div>
+      <div class="navInner">
+        <a class="brand" href="index.html">
+          <span class="brandMark">GS</span>
+          <span class="brandText"><strong>GraphicStudio</strong><span>Visual Identity</span></span>
+        </a>
+        <nav class="navLinks">
+          <a href="index.html" class="active">الرئيسية</a>
+          <a href="services.html">الخدمات</a>
+          <a href="portfolio.html">الأعمال</a>
+          <a href="brief.html" class="cta">أرسل البريف</a>
         </nav>
-
-        <header style="text-align: center; padding: 100px 0;">
-            <h1>هوية بصرية <span style="color: var(--blue-tech);">تبيع لك.</span></h1>
-            <p style="color: var(--muted); margin: 20px 0 40px;">مش بنرسم لوجو، إحنا بنبني "شخصية" لبراندك تخلي العميل يختارك أنت.</p>
-            <a href="brief.html" class="btn-cta">ابعت البريف دلوقتي</a>
-        </header>
-
-        <section class="slider-container">
-            <div class="slider-track">
-                <div class="work-item">هوية تقنية</div>
-                <div class="work-item">إنفوجرافيك</div>
-                <div class="work-item">سوشيال ميديا</div>
-                <div class="work-item">براندينج</div>
-                <div class="work-item">هوية تقنية</div>
-            </div>
-        </section>
+        <div class="navActions">
+          <button class="iconBtn" id="themeToggle">🌙</button>
+          <button class="iconBtn" id="langToggle">AR</button>
+          <a class="cta" id="waTop" href="#">واتساب</a>
+        </div>
+      </div>
     </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="heroCard">
+        <div class="heroGrid">
+          <div>
+            <div class="badge">نتائج احترافية • تسليم سريع</div>
+            <h1 class="h1">هوية بصرية <span style="color:var(--accent)">تبيع لك.</span></h1>
+            <p class="lead">مش بنرسم لوجو، إحنا بنبني "شخصية" لبراندك تخلي العميل يختارك أنت وسط الزحمة.</p>
+            <div class="heroActions">
+              <a class="btn btnPrimary" href="brief.html">ابدأ مشروعك</a>
+              <a class="btn" href="portfolio.html">شاهد الأعمال</a>
+            </div>
+            <div class="statGrid">
+              <div class="stat"><strong>+40</strong><span>مشروع</span></div>
+              <div class="stat"><strong>100%</strong><span>التزام</span></div>
+              <div class="stat"><strong>24h</strong><span>رد سريع</span></div>
+            </div>
+          </div>
+          <aside class="heroSide">
+            <h2 style="margin:0 0 8px; font-size:18px;">خطة العمل</h2>
+            <ul class="quickList">
+              <li class="quickItem"><span class="dot"></span><div><b>1) البريف</b><p>فهم الهدف</p></div></li>
+              <li class="quickItem"><span class="dot"></span><div><b>2) التصميم</b><p>تنفيذ إبداعي</p></div></li>
+              <li class="quickItem"><span class="dot"></span><div><b>3) التسليم</b><p>جاهز للطباعة</p></div></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="sectionHead">
+        <h2>خدماتنا</h2>
+        <a class="btn" href="services.html">عرض الكل</a>
+      </div>
+      <div class="cards">
+        <article class="card"><h3>هوية بصرية</h3><p>شعار وتطبيقات كاملة.</p></article>
+        <article class="card"><h3>إنفوجرافيك</h3><p>تبسيط البيانات المعقدة.</p></article>
+        <article class="card"><h3>سوشيال ميديا</h3><p>تصميمات تجذب الانتباه.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footerInner">
+        <div>© <span id="year"></span> Alaa Omran</div>
+        <div class="footerLinks">
+          <a href="portfolio.html">الأعمال</a>
+          <a href="brief.html">تواصل معنا</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="waFloat" id="waFloat" href="#">واتساب</a>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
