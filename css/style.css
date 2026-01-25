@@ -19,18 +19,18 @@ body {
 
 .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-/* القائمة العلوي */
+/* الهيدر */
 nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--line); }
 .logo { font-weight: 900; font-size: 1.5rem; color: var(--blue-tech); text-decoration: none; }
-.nav-links a { color: var(--text); text-decoration: none; margin-right: 20px; font-weight: bold; font-size: 0.9rem; }
+.nav-links a { color: var(--text); text-decoration: none; margin-right: 20px; font-weight: bold; }
 
-/* أزرار */
+/* الأزرار */
 .btn-cta { 
   background: var(--blue-tech); color: white; padding: 12px 30px; border-radius: 10px; 
   text-decoration: none; font-weight: bold; display: inline-block; border: none; cursor: pointer;
 }
 
-/* سلايدر الأعمال */
+/* السلايدر */
 .slider-container { overflow: hidden; padding: 40px 0; }
 .slider-track { display: flex; gap: 20px; animation: scroll 25s linear infinite; }
 .work-item {
@@ -42,7 +42,7 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 
 /* الفورم */
 .form-box { background: var(--panel); padding: 40px; border-radius: var(--radius); max-width: 700px; margin: 40px auto; }
-input, textarea, select {
+input, textarea {
   width: 100%; padding: 15px; margin-bottom: 15px; background: var(--bg);
   border: 1px solid var(--line); border-radius: 10px; color: white; font-family: inherit;
 }
