@@ -1,62 +1,66 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>خدماتنا | GS STUDIO</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 60px 0; }
-        .s-card { background: var(--panel); border: 1px solid var(--line); padding: 30px; border-radius: var(--radius); transition: 0.3s; }
-        .s-card:hover { border-color: var(--blue-tech); transform: translateY(-5px); }
-        .s-card h3 { color: var(--blue-tech); margin-bottom: 15px; font-size: 1.5rem; }
-        .s-card ul { list-style: none; color: var(--muted); }
-        .s-card ul li { margin-bottom: 8px; position: relative; padding-right: 20px; }
-        .s-card ul li::before { content: "←"; position: absolute; right: 0; color: var(--blue-tech); }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GraphicStudio — الأعمال</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav class="container" style="display: flex; justify-content: space-between; padding: 20px;">
-        <a href="index.html" class="logo" style="text-decoration:none">GS STUDIO</a>
-        <a href="index.html#brief" style="color: var(--blue-tech); font-weight: bold; text-decoration: none;">ابدأ مشروعك</a>
-    </nav>
-
-    <header class="container" style="text-align: center; padding: 60px 0;">
-        <h1 style="font-size: 2.5rem;">خدماتنا <span>من الآخر</span></h1>
-        <p style="color: var(--muted);">بنقدم لك الحلول اللي براندك محتاجها عشان يظهر ويبيع.</p>
-    </header>
-
-    <main class="container">
-        <div class="services-grid">
-            <div class="s-card">
-                <h3>هوية بصرية كاملة</h3>
-                <ul>
-                    <li>شعار (Logo) احترافي.</li>
-                    <li>باليتة ألوان وخطوط خاصة.</li>
-                    <li>تطبيقات الهوية (كروت، أظرف).</li>
-                </ul>
-            </div>
-            <div class="s-card">
-                <h3>إنفوجرافيك احترافي</h3>
-                <ul>
-                    <li>تبسيط بيانات معقدة.</li>
-                    <li>تصميمات تعليمية أو تسويقية.</li>
-                    <li>تنسيق عالي الوضوح.</li>
-                </ul>
-            </div>
-            <div class="s-card">
-                <h3>تصميمات سوشيال ميديا</h3>
-                <ul>
-                    <li>بوستات تخلي العميل يوقف سكرول.</li>
-                    <li>تنسيق بروفايلات وكفرات.</li>
-                    <li>إعلانات موجهة للبيع.</li>
-                </ul>
-            </div>
+  <header class="nav">
+    <div class="container">
+      <div class="navInner">
+        <a class="brand" href="index.html">
+          <span class="brandMark">GS</span>
+          <span class="brandText"><strong>GraphicStudio</strong><span>Portfolio</span></span>
+        </a>
+        <nav class="navLinks">
+          <a href="index.html">الرئيسية</a>
+          <a href="services.html">الخدمات</a>
+          <a href="portfolio.html" class="active">الأعمال</a>
+          <a href="brief.html" class="cta">أرسل البريف</a>
+        </nav>
+        <div class="navActions">
+          <button class="iconBtn" id="themeToggle">🌙</button>
+          <button class="iconBtn" id="langToggle">AR</button>
+          <a class="cta" id="waTop" href="#">واتساب</a>
         </div>
-    </main>
+      </div>
+    </div>
+  </header>
 
-    <footer style="text-align: center; padding: 40px; color: var(--muted);">
-        <a href="index.html#brief" class="btn-submit" style="display:inline-block; width:auto; padding: 15px 40px; text-decoration:none">اطلب خدمتك دلوقتي</a>
-    </footer>
+  <main class="container">
+    <section class="pageHero">
+      <div class="heroCard">
+        <h1>سابقة الأعمال</h1>
+        <p>مختارات من مشاريع الهوية البصرية والإنفوجرافيك.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="filters" id="filters"></div>
+      <div class="grid" id="grid"></div>
+    </section>
+  </main>
+
+  <div class="modal" id="modal">
+    <div class="overlay" id="overlay"></div>
+    <div class="modalCard">
+      <button class="close" id="close">×</button>
+      <div class="modalBody" id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footerInner">
+        <div>© <span id="year"></span> Alaa Omran</div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="waFloat" id="waFloat" href="#">واتساب</a>
+  <script src="js/main.js"></script>
 </body>
 </html>
