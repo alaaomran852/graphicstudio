@@ -1,206 +1,33 @@
-<!doctype html>
-<html lang="ar" dir="rtl" data-theme="dark">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="wa-number" content="00201064255553" />
-  <title>GraphicStudio | إرسال البريف</title>
-  <meta name="description" content="أرسل بريف مشروعك خلال دقيقتين. خيار توليد بريف سريع إذا لم يكن لديك بريف جاهز." />
-  <link rel="stylesheet" href="assets/css/style.css" />
+    <meta charset="UTF-8">
+    <title>أرسل البريف | GS STUDIO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-  <header class="topbar">
     <div class="container">
-      <nav class="nav">
-        <a class="brand" href="index.html">
-          <div class="logo">GS</div>
-          <div class="meta">
-            <strong>GraphicStudio</strong>
-            <span>Project Brief</span>
-          </div>
-        </a>
-
-        <div class="navlinks">
-          <a href="index.html">الرئيسية</a>
-          <a href="portfolio.html">الأعمال</a>
-          <a href="brief.html">إرسال البريف</a>
-          <a href="contact.html">تواصل</a>
-        </div>
-
-        <div class="navactions">
-          <button class="btn small" type="button" data-theme-toggle aria-pressed="true">
-            <span class="icon">◐</span>
-            <span>الثيم: <b data-theme-label>دارك</b></span>
-          </button>
-          <a class="btn primary small" href="contact.html">تواصل سريع</a>
-        </div>
-      </nav>
+        <nav><a href="index.html" class="logo">GS STUDIO</a></nav>
+        
+        <section style="padding: 60px 0;">
+            <div style="max-width: 700px; margin: 0 auto; background: var(--panel); padding: 40px; border-radius: var(--radius);">
+                <h2 style="text-align: center; margin-bottom: 30px;">الزتونة في دقيقة</h2>
+                <form id="briefForm">
+                    <input type="text" name="name" placeholder="اسمك الكريم" required>
+                    <input type="text" name="project" placeholder="نوع المشروع (لوجو، هوية..)" required>
+                    <select name="service" required style="margin-bottom: 15px;">
+                        <option value="">اختر الخدمة</option>
+                        <option>هوية بصرية</option>
+                        <option>إنفوجرافيك</option>
+                        <option>سوشيال ميديا</option>
+                    </select>
+                    <textarea name="notes" rows="5" placeholder="احكي لنا فكرتك باختصار.." required></textarea>
+                    <button type="submit" class="btn-cta" style="width: 100%;">إرسال للواتساب</button>
+                </form>
+            </div>
+        </section>
     </div>
-  </header>
-
-  <main class="container">
-    <section class="section">
-      <div class="card">
-        <div class="kicker">دقيقتين • أسئلة ذكية • تسليم منظم</div>
-        <h1 class="h1" style="margin-bottom:6px;">ابدأ مشروعك في دقيقتين</h1>
-        <p class="p">كلما كان البريف واضحًا… كان التنفيذ أسرع والنتيجة أدق.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="grid2">
-        <!-- Main brief form -->
-        <div class="card">
-          <h2 class="h2">نموذج البريف</h2>
-          <p class="p">املأ ما تستطيع… وإن لم يكن لديك بريف، استخدم المولد الذكي.</p>
-
-          <form class="form" id="briefForm">
-            <div class="grid2">
-              <div class="field">
-                <label>الاسم</label>
-                <input name="name" placeholder="اسمك أو اسم الشركة" required />
-              </div>
-              <div class="field">
-                <label>واتساب / هاتف</label>
-                <input name="phone" placeholder="مثال: 002010..." />
-              </div>
-            </div>
-
-            <div class="grid2">
-              <div class="field">
-                <label>البريد (اختياري)</label>
-                <input name="email" type="email" placeholder="name@email.com" />
-              </div>
-              <div class="field">
-                <label>الخدمة المطلوبة</label>
-                <select name="service" required>
-                  <option value="">اختر…</option>
-                  <option>هوية بصرية</option>
-                  <option>إنفوجرافيك</option>
-                  <option>سوشيال ميديا</option>
-                  <option>عرض تقديمي</option>
-                  <option>أخرى</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="field">
-              <label>رسالة المشروع (مختصر واضح)</label>
-              <textarea name="message" placeholder="اكتب الهدف، الجمهور، والمنصة/المقاسات إن أمكن…"></textarea>
-            </div>
-
-            <div class="note">
-              هذا النموذج يعمل على GitHub Pages بدون سيرفر؛ عند الإرسال يتم حفظ البيانات محليًا لديك لتجنب ضياعها.
-              للإرسال الفعلي استخدم زر واتساب في الأسفل.
-            </div>
-
-            <div class="ctarow">
-              <button class="btn primary" type="submit">حفظ البريف</button>
-              <a class="btn" href="contact.html">إرسال عبر واتساب</a>
-            </div>
-          </form>
-        </div>
-
-        <!-- Quick brief builder -->
-        <div class="card">
-          <h2 class="h2">مش عندك بريف؟ اعمله الآن</h2>
-          <p class="p">املأ 6 حقول… وسيتم توليد بريف جاهز للإرسال.</p>
-
-          <label class="note" style="display:flex; align-items:center; gap:10px;">
-            <input id="noBrief" type="checkbox" />
-            <span><b>فعّل مولّد البريف السريع</b></span>
-          </label>
-
-          <div id="wizard" style="display:none; margin-top:12px;">
-            <div class="form">
-              <div class="field">
-                <label>الخدمة</label>
-                <select id="w_service">
-                  <option value="">اختر…</option>
-                  <option>هوية بصرية</option>
-                  <option>إنفوجرافيك</option>
-                  <option>سوشيال ميديا</option>
-                  <option>عرض تقديمي</option>
-                  <option>أخرى</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label>الهدف الأساسي</label>
-                <input id="w_goal" placeholder="مثال: شرح خدمة / زيادة وضوح / تحسين مظهر العلامة" />
-              </div>
-
-              <div class="field">
-                <label>الجمهور المستهدف</label>
-                <input id="w_audience" placeholder="مثال: عملاء تجزئة / شركات / طلاب..." />
-              </div>
-
-              <div class="field">
-                <label>المنصة/المقاسات</label>
-                <input id="w_platform" placeholder="مثال: إنستجرام 1080×1350 + A4 PDF" />
-              </div>
-
-              <div class="field">
-                <label>الأسلوب المرغوب</label>
-                <input id="w_style" placeholder="مثال: Minimal / Dark / Clean Medical / Kids..." />
-              </div>
-
-              <div class="field">
-                <label>أمثلة/مراجع (روابط)</label>
-                <input id="w_reference" placeholder="ضع روابط إن وجدت" />
-              </div>
-
-              <div class="grid2">
-                <div class="field">
-                  <label>موعد التسليم</label>
-                  <input id="w_deadline" placeholder="مثال: خلال 3 أيام" />
-                </div>
-                <div class="field">
-                  <label>ميزانية تقريبية (اختياري)</label>
-                  <input id="w_budget" placeholder="اختياري" />
-                </div>
-              </div>
-
-              <div class="field">
-                <label>ملاحظات إضافية</label>
-                <textarea id="w_notes" placeholder="أي تفاصيل إضافية تساعد في التنفيذ…"></textarea>
-              </div>
-
-              <div class="ctarow">
-                <button class="btn primary" id="generateBrief" type="button">توليد البريف</button>
-                <button class="btn" id="copyBrief" type="button">نسخ</button>
-                <button class="btn" id="sendWhatsAppBrief" type="button">إرسال واتساب</button>
-              </div>
-            </div>
-          </div>
-
-          <div style="margin-top:12px;">
-            <label class="small">ناتج البريف السريع</label>
-            <textarea id="briefOutput" style="display:none;" readonly placeholder="سيظهر هنا بعد التوليد…"></textarea>
-          </div>
-
-          <div class="note" style="margin-top:12px;">
-            عند الضغط على “إرسال واتساب” سيتم فتح محادثة مع رقم: <b>00201064255553</b> ومعها نص البريف جاهز.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <p class="small">GraphicStudio — Brief</p>
-    </footer>
-  </main>
-
-  <!-- WhatsApp Floating -->
-  <div class="whatsapp">
-    <a href="https://wa.me/00201064255553" target="_blank" rel="noopener">
-      <span class="dot"></span>
-      <span>واتساب مباشر</span>
-    </a>
-  </div>
-
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <script src="assets/js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
