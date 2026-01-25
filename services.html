@@ -1,28 +1,92 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>خدماتنا | GS STUDIO</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GraphicStudio — الخدمات</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <header class="nav">
     <div class="container">
-        <nav>
-            <a href="index.html" class="logo">GS STUDIO</a>
-            <div class="nav-links"><a href="portfolio.html">الأعمال</a><a href="brief.html" class="btn-cta">اطلب الآن</a></div>
+      <div class="navInner">
+        <a class="brand" href="index.html">
+          <span class="brandMark">GS</span>
+          <span class="brandText"><strong>GraphicStudio</strong><span>Services</span></span>
+        </a>
+        <nav class="navLinks">
+          <a href="index.html">الرئيسية</a>
+          <a href="services.html" class="active">الخدمات</a>
+          <a href="portfolio.html">الأعمال</a>
+          <a href="brief.html" class="cta">أرسل البريف</a>
         </nav>
-        <h1 style="text-align:center; padding: 60px 0;">خدماتنا <span>من الآخر</span></h1>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-            <div class="work-item" style="flex-direction: column; height: auto; padding: 30px;">
-                <h3 style="margin-bottom: 10px;">الهوية البصرية</h3>
-                <p style="color: var(--muted); font-size: 0.9rem;">تصميم كامل لبراندك من الألف للياء.</p>
-            </div>
-            <div class="work-item" style="flex-direction: column; height: auto; padding: 30px;">
-                <h3 style="margin-bottom: 10px;">الإنفوجرافيك</h3>
-                <p style="color: var(--muted); font-size: 0.9rem;">تبسيط بياناتك المعقدة بشكل بصري مبهر.</p>
-            </div>
+        <div class="navActions">
+          <button class="iconBtn" id="themeToggle">🌙</button>
+          <button class="iconBtn" id="langToggle">AR</button>
+          <a class="cta" id="waTop" href="#">واتساب</a>
         </div>
+      </div>
     </div>
+  </header>
+
+  <main class="container">
+    <section class="pageHero">
+      <div class="heroCard">
+        <h1>الخدمات والباقات</h1>
+        <p>أسعار واضحة وخطوات محددة عشان ننجز الشغل باحترافية.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <article class="card">
+          <h3>هوية بصرية كاملة</h3>
+          <p>شعار + ألوان + خطوط + كارت شخصي + ورق رسمي.</p>
+          <div class="priceRow">
+            <span class="pill">تسليم: 3-5 أيام</span>
+            <a class="btn btnPrimary" href="brief.html">اطلب الآن</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3>إنفوجرافيك</h3>
+          <p>تصميم واحد A4 أو بوست انستجرام لتبسيط معلومة.</p>
+          <div class="priceRow">
+            <span class="pill">تسليم: 24 ساعة</span>
+            <a class="btn btnPrimary" href="brief.html">اطلب الآن</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3>سوشيال ميديا</h3>
+          <p>تصميمات للسوشيال ميديا (فيسبوك/انستجرام) بجودة عالية.</p>
+          <div class="priceRow">
+            <span class="pill">حسب الكمية</span>
+            <a class="btn btnPrimary" href="brief.html">اطلب الآن</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="sectionHead"><h2>أسئلة متكررة</h2></div>
+      <div class="faq">
+        <button class="q">هل يمكن التعديل على التصميم؟</button>
+        <div class="a">نعم، لك دورتين تعديل مجانية لضمان رضاك التام.</div>
+        <button class="q">ما هي صيغ الملفات المستلمة؟</button>
+        <div class="a">تستلم الملفات جاهزة للطباعة (PDF) وللويب (PNG/JPG).</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footerInner">
+        <div>© <span id="year"></span> Alaa Omran</div>
+      </div>
+    </div>
+  </footer>
+  
+  <a class="waFloat" id="waFloat" href="#">واتساب</a>
+  <script src="js/main.js"></script>
 </body>
 </html>
